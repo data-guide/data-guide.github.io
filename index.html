@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta content="ie=edge" http-equiv="x-ua-compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta name="google-site-verification" content="PmUkhC6SLY1aQxqNeaP40hf0j4IdHeBw-6J_XTqzA1M" />
+
+    <link rel="icon" href="/favicon.ico">
+    <link href="/assets/css/style.css" rel="stylesheet">
+
+    
+
+<!-- Basic Meta Tags -->
+<title>data-guide | data guide</title>
+<meta name="description" content="data-guide is a blog designed to help aspiring developers, self-taught coders, and career switchers navigate the modern tech landscape. Learn anything from new languages, tools, software, AI, web development, data engineering, data science, data analytics, linux, and more!">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://data-guide.github.io/">
+<meta name="author" content="Hardy Fenam">
+
+
+
+<!-- Open Graph Tags -->
+<meta property="og:type" content="article">
+<meta property="og:title" content="data-guide">
+<meta property="og:description" content="data-guide is a blog designed to help aspiring developers, self-taught coders, and career switchers navigate the modern tech landscape. Learn anything from new languages, tools, software, AI, web development, data engineering, data science, data analytics, linux, and more!">
+<meta property="og:url" content="https://data-guide.github.io/">
+<meta property="og:image" content="https://data-guide.github.io">
+<meta property="og:site_name" content="data guide">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="">
+
+<!-- Twitter Cards -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="data-guide">
+<meta name="twitter:description" content="data-guide is a blog designed to help aspiring developers, self-taught coders, and career switchers navigate the modern tech landscape. Learn anything from new languages, tools, software, AI, web development, data engineering, data science, data analytics, linux, and more!">
+<meta name="twitter:image" content="https://data-guide.github.io">
+<meta name="twitter:creator" content="@HFenam55511">
+<meta name="twitter:site" content="@HFenam55511">
+    <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://data-guide.github.io/"
+      }
+      
+    ]
+  }
+  </script>
+    
+    
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-88BS0VNE3L"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-88BS0VNE3L');
+</script>
+  </head>
+<body class="page  min-h-screen flex flex-col">
+  <div id="menu-container"
+  class=" bg-blue-600 h-screen w-screen fixed z-50 p-8 flex-col items-center justify-around bg-gradient-to-b from-orange-600 to-yellow-300 opacity-90 overflow-hidden hidden">
+  <div id="menu-close" class="top-7 right-7 absolute">
+    <svg aria-hidden="true" focusable="false" class="h-6 text-white" role="img" xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 352 512">
+      <path fill="currentColor"
+        d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z">
+      </path>
+    </svg>
+  </div>
+  <div class="flex flex-col text-center text-white text-2xl font-bold">
+    
+    <a class="py-2" href="/">Home</a>
+    
+    <a class="py-2" href="/blog/">Blog</a>
+    
+    <a class="py-2" href="/about/">About</a>
+    
+  </div>
+</div>
+  <header class="flex items-center justify-between py-0 px-6 shadow-md top-0 w-full sticky bg-white z-50">
+
+  <div class="logo hidden md:block" role="banner">
+  <a class="flex items-start hover:opacity-70 transition duration-300 ease-in-out space-x-4" href="/" aria-label="data guide homepage">
+    
+    <img 
+      class="mr-2"
+      src="/assets/images/logo/logo_red.png"
+      alt="data guide logo"
+      height="48px"
+      width="48px"
+      loading="lazy"
+    />
+    
+    <div class="flex flex-col leading-tight">
+      
+        <span class="text-2xl font-sans font-semibold"><strong>Data Guide</strong></span>
+      
+      <span class="text-sm text-gray-500 font-sans">data-guide.github.io</span>
+    </div>
+  </a>
+</div>
+
+<div class="logo-mobile block md:hidden" role="banner">
+  <a class="flex items-center hover:opacity-70 transition duration-300 ease-in-out" href="/" aria-label="data guide homepage">
+    
+    <img 
+      src="/assets/images/logo/logo_red.png"
+      alt="data guide mobile logo"
+      height="36px"
+      width="36px"
+      loading="lazy"
+    />
+    
+    
+    <span class="ml-2 text-lg font-sans font-semibold"></span>
+    
+  </a>
+</div>
+  <div class="flex" id="menu-trigger">
+    <svg aria-hidden="true" class="text-black" data-icon="bars" data-prefix="fas" focusable="false" height="24"
+      role="img" viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z"
+        fill="currentColor"></path>
+    </svg>
+
+  </div>
+</header>
+
+    <main class="mx-auto px-6 md:px-4 flex-grow" role="main">
+      <article>
+        <!-- Hero Section -->
+<section
+  class="text-center w-full bg-cover bg-center bg-no-repeat lg:py-20 lg:px-48 relative rounded-lg py-16 px-5"
+  style="background-image: url('assets/home.avif');"
+  alt="Group of colleagues working together on a project."
+>
+  <!-- Overlay -->
+  <div class="absolute inset-0 bg-gray-700 bg-opacity-60 z-0 pointer-events-none rounded-lg"></div>
+
+  <div class="relative z-10 max-w-3xl mx-auto text-center text-gray-100">
+  
+
+
+
+
+<section class="pt-16 pb-8 md:pb-14 lg:pb-10 text-center" id="top">
+  <div class="max-w-3xl mx-auto px-6 md:px-0">
+
+    <h1 class="text-2xl md:text-3xl lg:text-4xl font-extrabold tracking-tight leading-tight">
+      From Beginner to Builder: Practical Tech Tutorials That Actually Work
+    </h1>
+
+    
+
+  </div>
+</section>
+
+  <p class="text-lg text-gray-100 lg:mb-16 mb-5 max-w-xl mx-auto">
+    This blog is your guide to mastering real-world technology skills.<br>
+    Every guide here is hands-on, practical, and made for serious learners and self-starters.
+  </p>
+
+  </div>
+
+  <a
+  href="#latest-posts"
+  class="absolute left-1/2 transform -translate-x-1/2 bg-blue-500 text-white font-semibold px-6 py-3 rounded-lg hover:bg-blue-600 transition shadow-lg"
+  >
+    Browse Latest Posts
+  </a>
+</section>
+
+<section class="mt-12 text-center">
+  <a href="/categories/" class="inline-block px-6 py-3 text-white bg-blue-500 hover:bg-blue-600 rounded-lg font-semibold shadow-md transition">
+    Explore Topics by Category →
+  </a>
+</section>
+
+<!-- Blog Post List -->
+<section id="latest-posts" class="py-10 px-6 md:px-0 max-w-3xl mx-auto">
+  <h2 class="text-2xl font-semibold mb-6 text-gray-800 border-b pb-2">Latest Articles</h2>
+
+  
+  
+    <article class="mb-10">
+      <article class="flex flex-col md:flex-row w-full lg:w-10/12">
+
+  
+    <div class="md:mr-4 mb-2 md:mb-0 md:w-4/12">
+      <a class="bg-gray-100 block rounded overflow-hidden" href="/what-is-apache-kafka-explained/">
+        <div class="relative w-full aspect-video">
+          <img
+            width="640"
+            height="360"
+            loading="lazy"
+            decoding="async"
+            class="absolute top-0 left-0 w-full h-full object-cover object-center transition duration-300 ease-in-out hover:opacity-70"
+            alt="Illustration of Apache Kafka message flow using a post office metaphor"
+            src="/assets/post_images/img14.webp"
+          />
+        </div>
+      </a>
+    </div>
+  
+
+  <div class="flex-1">
+    <div class="flex items-center justify-between mb-2">
+      <div class="text-sm font-medium text-gray-700">26 July 2025</div>
+      
+    </div>
+
+    <a href="/what-is-apache-kafka-explained/" class="hover:text-blue-400">
+      <h2 class="text-2xl font-semibold mb-1">What Is Apache Kafka? A Beginner’s Guide to Event Streaming in Data Engineering</h2>
+    </a>
+
+    <p class="text-base font-light text-gray-600 mb-4">What is Apache Kafka? Learn how it works, why it’s used in modern data engineering, and whether you need it, with clear metaphors and beginner-friendly guidance.</p>
+
+    
+      <div class="mb-2">
+        
+          <a class="p-1 px-3 mr-1 mb-1 inline-block text-xs font-mono rounded bg-blue-200 text-blue-800 hover:bg-green-200 hover:text-blue-800 transition duration-300 ease-in-out" href="/category/data-engineering">Data Engineering</a>
+        
+          <a class="p-1 px-3 mr-1 mb-1 inline-block text-xs font-mono rounded bg-blue-200 text-blue-800 hover:bg-green-200 hover:text-blue-800 transition duration-300 ease-in-out" href="/category/tutorials">Tutorials</a>
+        
+          <a class="p-1 px-3 mr-1 mb-1 inline-block text-xs font-mono rounded bg-blue-200 text-blue-800 hover:bg-green-200 hover:text-blue-800 transition duration-300 ease-in-out" href="/category/tools">Tools</a>
+        
+      </div>
+    
+  </div>
+
+</article>
+      <a href="/what-is-apache-kafka-explained/" class="text-blue-600 hover:underline text-sm">
+        Read more →
+      </a>
+    </article>
+  
+    <article class="mb-10">
+      <article class="flex flex-col md:flex-row w-full lg:w-10/12">
+
+  
+    <div class="md:mr-4 mb-2 md:mb-0 md:w-4/12">
+      <a class="bg-gray-100 block rounded overflow-hidden" href="/how-terraform-works-explained/">
+        <div class="relative w-full aspect-video">
+          <img
+            width="640"
+            height="360"
+            loading="lazy"
+            decoding="async"
+            class="absolute top-0 left-0 w-full h-full object-cover object-center transition duration-300 ease-in-out hover:opacity-70"
+            alt="Terraform architecture diagram showing DAG, state, and module system"
+            src="/assets/post_images/img11.avif"
+          />
+        </div>
+      </a>
+    </div>
+  
+
+  <div class="flex-1">
+    <div class="flex items-center justify-between mb-2">
+      <div class="text-sm font-medium text-gray-700">17 July 2025</div>
+      
+    </div>
+
+    <a href="/how-terraform-works-explained/" class="hover:text-blue-400">
+      <h2 class="text-2xl font-semibold mb-1">How Terraform Really Works Under the Hood (Modules, State, DAGs Explained)</h2>
+    </a>
+
+    <p class="text-base font-light text-gray-600 mb-4">Learn how Terraform actually works behind the scenes, including DAG-based execution, state files, root modules, and project structure. A technical deep dive for DevOps engineers.</p>
+
+    
+      <div class="mb-2">
+        
+          <a class="p-1 px-3 mr-1 mb-1 inline-block text-xs font-mono rounded bg-blue-200 text-blue-800 hover:bg-green-200 hover:text-blue-800 transition duration-300 ease-in-out" href="/category/devops">DevOps</a>
+        
+          <a class="p-1 px-3 mr-1 mb-1 inline-block text-xs font-mono rounded bg-blue-200 text-blue-800 hover:bg-green-200 hover:text-blue-800 transition duration-300 ease-in-out" href="/category/tutorials">Tutorials</a>
+        
+      </div>
+    
+  </div>
+
+</article>
+      <a href="/how-terraform-works-explained/" class="text-blue-600 hover:underline text-sm">
+        Read more →
+      </a>
+    </article>
+  
+    <article class="mb-10">
+      <article class="flex flex-col md:flex-row w-full lg:w-10/12">
+
+  
+    <div class="md:mr-4 mb-2 md:mb-0 md:w-4/12">
+      <a class="bg-gray-100 block rounded overflow-hidden" href="/what-is-terraform-guide/">
+        <div class="relative w-full aspect-video">
+          <img
+            width="640"
+            height="360"
+            loading="lazy"
+            decoding="async"
+            class="absolute top-0 left-0 w-full h-full object-cover object-center transition duration-300 ease-in-out hover:opacity-70"
+            alt="Terraform cloud infrastructure diagram with AWS and Terraform CLI"
+            src="/assets/post_images/img10.avif"
+          />
+        </div>
+      </a>
+    </div>
+  
+
+  <div class="flex-1">
+    <div class="flex items-center justify-between mb-2">
+      <div class="text-sm font-medium text-gray-700">16 July 2025</div>
+      
+    </div>
+
+    <a href="/what-is-terraform-guide/" class="hover:text-blue-400">
+      <h2 class="text-2xl font-semibold mb-1">What Is Terraform and How to Use It (2025 Guide)</h2>
+    </a>
+
+    <p class="text-base font-light text-gray-600 mb-4">Learn what Terraform is, how to use it with AWS, and how to build scalable infrastructure as code. A beginner-friendly, guide to Terraform in 2025.</p>
+
+    
+      <div class="mb-2">
+        
+          <a class="p-1 px-3 mr-1 mb-1 inline-block text-xs font-mono rounded bg-blue-200 text-blue-800 hover:bg-green-200 hover:text-blue-800 transition duration-300 ease-in-out" href="/category/devops">DevOps</a>
+        
+          <a class="p-1 px-3 mr-1 mb-1 inline-block text-xs font-mono rounded bg-blue-200 text-blue-800 hover:bg-green-200 hover:text-blue-800 transition duration-300 ease-in-out" href="/category/tools">Tools</a>
+        
+          <a class="p-1 px-3 mr-1 mb-1 inline-block text-xs font-mono rounded bg-blue-200 text-blue-800 hover:bg-green-200 hover:text-blue-800 transition duration-300 ease-in-out" href="/category/tutorials">Tutorials</a>
+        
+      </div>
+    
+  </div>
+
+</article>
+      <a href="/what-is-terraform-guide/" class="text-blue-600 hover:underline text-sm">
+        Read more →
+      </a>
+    </article>
+  
+    <article class="mb-10">
+      <article class="flex flex-col md:flex-row w-full lg:w-10/12">
+
+  
+    <div class="md:mr-4 mb-2 md:mb-0 md:w-4/12">
+      <a class="bg-gray-100 block rounded overflow-hidden" href="/blog/what-is-docker/">
+        <div class="relative w-full aspect-video">
+          <img
+            width="640"
+            height="360"
+            loading="lazy"
+            decoding="async"
+            class="absolute top-0 left-0 w-full h-full object-cover object-center transition duration-300 ease-in-out hover:opacity-70"
+            alt="Docker shipping container metaphor for software portability"
+            src="/assets/post_images/img12.avif"
+          />
+        </div>
+      </a>
+    </div>
+  
+
+  <div class="flex-1">
+    <div class="flex items-center justify-between mb-2">
+      <div class="text-sm font-medium text-gray-700">15 July 2025</div>
+      
+    </div>
+
+    <a href="/blog/what-is-docker/" class="hover:text-blue-400">
+      <h2 class="text-2xl font-semibold mb-1">What Is Docker, Really? Why Developers Use It, and When You Should Too</h2>
+    </a>
+
+    <p class="text-base font-light text-gray-600 mb-4">A developer-first guide to understanding Docker, containers, and why you should (or shouldn’t) use it. Clear metaphors, practical use cases, and no fluff.</p>
+
+    
+      <div class="mb-2">
+        
+          <a class="p-1 px-3 mr-1 mb-1 inline-block text-xs font-mono rounded bg-blue-200 text-blue-800 hover:bg-green-200 hover:text-blue-800 transition duration-300 ease-in-out" href="/category/devops">DevOps</a>
+        
+          <a class="p-1 px-3 mr-1 mb-1 inline-block text-xs font-mono rounded bg-blue-200 text-blue-800 hover:bg-green-200 hover:text-blue-800 transition duration-300 ease-in-out" href="/category/tools">Tools</a>
+        
+          <a class="p-1 px-3 mr-1 mb-1 inline-block text-xs font-mono rounded bg-blue-200 text-blue-800 hover:bg-green-200 hover:text-blue-800 transition duration-300 ease-in-out" href="/category/tutorials">Tutorials</a>
+        
+      </div>
+    
+  </div>
+
+</article>
+      <a href="/blog/what-is-docker/" class="text-blue-600 hover:underline text-sm">
+        Read more →
+      </a>
+    </article>
+  
+    <article class="mb-10">
+      <article class="flex flex-col md:flex-row w-full lg:w-10/12">
+
+  
+    <div class="md:mr-4 mb-2 md:mb-0 md:w-4/12">
+      <a class="bg-gray-100 block rounded overflow-hidden" href="/what-is-dbt-and-why-use-it/">
+        <div class="relative w-full aspect-video">
+          <img
+            width="640"
+            height="360"
+            loading="lazy"
+            decoding="async"
+            class="absolute top-0 left-0 w-full h-full object-cover object-center transition duration-300 ease-in-out hover:opacity-70"
+            alt="dbt logo with data model transformation"
+            src="/assets/post_images/img13.avif"
+          />
+        </div>
+      </a>
+    </div>
+  
+
+  <div class="flex-1">
+    <div class="flex items-center justify-between mb-2">
+      <div class="text-sm font-medium text-gray-700">14 July 2025</div>
+      
+    </div>
+
+    <a href="/what-is-dbt-and-why-use-it/" class="hover:text-blue-400">
+      <h2 class="text-2xl font-semibold mb-1">What is dbt? Why Data Engineers and Analysts Use It (And If You Should)</h2>
+    </a>
+
+    <p class="text-base font-light text-gray-600 mb-4">Learn what dbt (data build tool) is, how it helps data teams transform data using SQL, and whether you actually need to use it in your stack.</p>
+
+    
+      <div class="mb-2">
+        
+          <a class="p-1 px-3 mr-1 mb-1 inline-block text-xs font-mono rounded bg-blue-200 text-blue-800 hover:bg-green-200 hover:text-blue-800 transition duration-300 ease-in-out" href="/category/data-engineering">Data Engineering</a>
+        
+          <a class="p-1 px-3 mr-1 mb-1 inline-block text-xs font-mono rounded bg-blue-200 text-blue-800 hover:bg-green-200 hover:text-blue-800 transition duration-300 ease-in-out" href="/category/tools">Tools</a>
+        
+          <a class="p-1 px-3 mr-1 mb-1 inline-block text-xs font-mono rounded bg-blue-200 text-blue-800 hover:bg-green-200 hover:text-blue-800 transition duration-300 ease-in-out" href="/category/tutorials">Tutorials</a>
+        
+      </div>
+    
+  </div>
+
+</article>
+      <a href="/what-is-dbt-and-why-use-it/" class="text-blue-600 hover:underline text-sm">
+        Read more →
+      </a>
+    </article>
+  
+
+  <!-- CTA Button to All Posts -->
+  <div class="mt-8 text-center">
+    <a href="/blog/" class="inline-block px-6 py-3 border bg-blue-500 border-blue-600 hover:bg-blue-600 text-white rounded-lg font-semibold shadow-sm transition">
+      See All Posts →
+    </a>
+  </div>
+</section>
+
+      </article>
+    </main>
+
+  <footer class="w-full bg-gray-900 text-gray-300 py-10 px-6 mt-12">
+  <!-- Cookie Notice -->
+<div id="cookie-banner" class="fixed bottom-0 inset-x-0 bg-gray-900 text-white text-sm p-4 z-50 hidden">
+  <div class="max-w-4xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-4">
+    <p class="text-center sm:text-left">
+      We use cookies to improve your experience. By continuing to use this site, you agree to our 
+      <a href="/privacy-policy/" class="underline">Privacy Policy</a>.
+    </p>
+    <button id="cookie-accept" class="bg-white text-gray-900 px-4 py-1 rounded hover:bg-gray-200 transition text-sm">
+      Accept
+    </button>
+  </div>
+</div>
+
+<script>
+  // Show banner if consent not given
+  if (!localStorage.getItem('cookieAccepted')) {
+    document.getElementById('cookie-banner').classList.remove('hidden');
+  }
+
+  // Accept button
+  document.getElementById('cookie-accept')?.addEventListener('click', function () {
+    localStorage.setItem('cookieAccepted', 'true');
+    document.getElementById('cookie-banner').classList.add('hidden');
+  });
+</script>
+
+  <div class="max-w-4xl mx-auto space-y-6 text-sm">
+
+    <!-- Navigation -->
+    <nav class="flex flex-wrap justify-center gap-4 text-gray-400">
+      <a href="/" class="hover:text-white transition">Home</a>
+      <a href="/about/" class="hover:text-white transition">About</a>
+      <a href="/blog/" class="hover:text-white transition">Blog</a>
+      <a href="/contact/" class="hover:text-white transition">Contact</a>
+      <a href="/privacy-policy/" class="hover:text-white transition">Privacy</a>
+      <a href="/disclaimer/" class="hover:text-white transition">Disclaimer</a>
+    </nav>
+
+    <!-- Site Description -->
+    <p class="text-center text-gray-400">
+      Built by <span class="text-white font-semibold">Hardy Fenam</span> — sharing practical tech tips, study guides, and online course reviews for aspiring developers.
+    </p>
+
+    <!-- Legal / Affiliate Disclosure -->
+    <p class="text-center text-gray-500 text-xs">
+      © 2025 Hardy Fenam. This site may contain affiliate links. 
+      <a href="/disclaimer/" class="underline hover:text-white transition">Learn more</a>.
+    </p>
+
+    <!-- Social Links -->
+    <div class="flex justify-center space-x-4 text-gray-400">
+      <a href="https://github.com/hhrh" target="_blank" rel="noopener" class="hover:text-white transition">GitHub</a>
+      <a href="https://linkedin.com/in/hardyf" target="_blank" rel="noopener" class="hover:text-white transition">LinkedIn</a>
+    </div>
+
+  </div>
+</footer>
+  <script type="text/javascript" src="/assets/js/hamburger.js" defer></script>
+</body>
+</html>

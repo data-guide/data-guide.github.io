@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta content="ie=edge" http-equiv="x-ua-compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta name="google-site-verification" content="PmUkhC6SLY1aQxqNeaP40hf0j4IdHeBw-6J_XTqzA1M" />
+
+    <link rel="icon" href="/favicon.ico">
+    <link href="/assets/css/style.css" rel="stylesheet">
+
+    
+
+<!-- Basic Meta Tags -->
+<title>Manual vs Terraform: What's the Best AWS Workflow for Data Engineers? | data guide</title>
+<meta name="description" content="Wondering whether to build your AWS infrastructure manually or with Terraform? Learn the pros, cons, and best practices for data engineers working with AWS services like S3, Lambda, Glue, and Step Functions.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://data-guide.github.io/manual-vs-terraform-data-engineers/">
+<meta name="author" content="Hardy Fenam">
+
+
+
+<!-- Open Graph Tags -->
+<meta property="og:type" content="article">
+<meta property="og:title" content="Manual vs Terraform: What's the Best AWS Workflow for Data Engineers?">
+<meta property="og:description" content="Wondering whether to build your AWS infrastructure manually or with Terraform? Learn the pros, cons, and best practices for data engineers working with AWS services like S3, Lambda, Glue, and Step Functions.">
+<meta property="og:url" content="https://data-guide.github.io/manual-vs-terraform-data-engineers/">
+<meta property="og:image" content="https://data-guide.github.ioassets/post_images/img8.avif">
+<meta property="og:site_name" content="data guide">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2025-07-04T00:00:00-07:00">
+
+<!-- Twitter Cards -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Manual vs Terraform: What's the Best AWS Workflow for Data Engineers?">
+<meta name="twitter:description" content="Wondering whether to build your AWS infrastructure manually or with Terraform? Learn the pros, cons, and best practices for data engineers working with AWS services like S3, Lambda, Glue, and Step Functions.">
+<meta name="twitter:image" content="https://data-guide.github.ioassets/post_images/img8.avif">
+<meta name="twitter:creator" content="@HFenam55511">
+<meta name="twitter:site" content="@HFenam55511">
+    <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://data-guide.github.io/"
+      }
+      
+        ,
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Cloud",
+          "item": "https://data-guide.github.io/category/cloud/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Manual vs Terraform: What&#39;s the Best AWS Workflow for Data Engineers?",
+          "item": "https://data-guide.github.io/manual-vs-terraform-data-engineers/"
+        }
+        
+      
+    ]
+  }
+  </script>
+    
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Manual vs Terraform: What&#39;s the Best AWS Workflow for Data Engineers?",
+  "description": "Wondering whether to build your AWS infrastructure manually or with Terraform? Learn the pros, cons, and best practices for data engineers working with AWS services like S3, Lambda, Glue, and Step Functions.",
+  "author": {
+    "@type": "Person",
+    "name": "Hardy Fenam"
+  },
+  "datePublished": "2025-07-04T00:00:00-07:00",
+  "dateModified": "2025-07-04T00:00:00-07:00",
+  "image": "https://data-guide.github.ioassets/post_images/img8.avif",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://data-guide.github.io/manual-vs-terraform-data-engineers/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "data guide",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://data-guide.github.io/assets/images/logo/logo_red.png"
+    }
+  },
+  "url": "https://data-guide.github.io/manual-vs-terraform-data-engineers/"
+}
+</script>
+
+    
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-88BS0VNE3L"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-88BS0VNE3L');
+</script>
+  </head>
+<body class="page  min-h-screen flex flex-col">
+  <div id="menu-container"
+  class=" bg-blue-600 h-screen w-screen fixed z-50 p-8 flex-col items-center justify-around bg-gradient-to-b from-orange-600 to-yellow-300 opacity-90 overflow-hidden hidden">
+  <div id="menu-close" class="top-7 right-7 absolute">
+    <svg aria-hidden="true" focusable="false" class="h-6 text-white" role="img" xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 352 512">
+      <path fill="currentColor"
+        d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z">
+      </path>
+    </svg>
+  </div>
+  <div class="flex flex-col text-center text-white text-2xl font-bold">
+    
+    <a class="py-2" href="/">Home</a>
+    
+    <a class="py-2" href="/blog/">Blog</a>
+    
+    <a class="py-2" href="/about/">About</a>
+    
+  </div>
+</div>
+  <header class="flex items-center justify-between py-0 px-6 shadow-md top-0 w-full sticky bg-white z-50">
+
+  <div class="logo hidden md:block" role="banner">
+  <a class="flex items-start hover:opacity-70 transition duration-300 ease-in-out space-x-4" href="/" aria-label="data guide homepage">
+    
+    <img 
+      class="mr-2"
+      src="/assets/images/logo/logo_red.png"
+      alt="data guide logo"
+      height="48px"
+      width="48px"
+      loading="lazy"
+    />
+    
+    <div class="flex flex-col leading-tight">
+      
+        <span class="text-2xl font-sans font-semibold"><strong>Data Guide</strong></span>
+      
+      <span class="text-sm text-gray-500 font-sans">data-guide.github.io</span>
+    </div>
+  </a>
+</div>
+
+<div class="logo-mobile block md:hidden" role="banner">
+  <a class="flex items-center hover:opacity-70 transition duration-300 ease-in-out" href="/" aria-label="data guide homepage">
+    
+    <img 
+      src="/assets/images/logo/logo_red.png"
+      alt="data guide mobile logo"
+      height="36px"
+      width="36px"
+      loading="lazy"
+    />
+    
+    
+    <span class="ml-2 text-lg font-sans font-semibold"></span>
+    
+  </a>
+</div>
+  <div class="flex" id="menu-trigger">
+    <svg aria-hidden="true" class="text-black" data-icon="bars" data-prefix="fas" focusable="false" height="24"
+      role="img" viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z"
+        fill="currentColor"></path>
+    </svg>
+
+  </div>
+</header>
+
+    <main class="mx-auto px-6 md:px-4 flex-grow" role="main">
+      <article>
+        
+
+
+
+
+<section class="pt-16 pb-8 md:pb-14 lg:pb-10 text-center" id="top">
+  <div class="max-w-3xl mx-auto px-6 md:px-0">
+
+    <h1 class="text-2xl md:text-3xl lg:text-4xl font-extrabold tracking-tight leading-tight">
+      Manual vs Terraform: What's the Best AWS Workflow for Data Engineers?
+    </h1>
+
+    
+      <p class="mt-4 text-lg md:text-xl text-gray-600 leading-relaxed max-w-2xl mx-auto">
+        Wondering whether to build your AWS infrastructure manually or with Terraform? Learn the pros, cons, and best practices for data engineers working with AWS services like S3, Lambda, Glue, and Step Functions.
+      </p>
+    
+
+  </div>
+</section>
+
+
+  <div class="flex flex-col pb-3 md:hidden">
+    
+  </div>
+
+
+<div class="relative w-full aspect-[5/2] overflow-hidden rounded-lg">
+  <img
+    src="/assets/post_images/img8.avif"
+    alt="Terraform vs manual AWS diagram"
+    loading="lazy"
+    class="absolute top-0 left-0 w-full h-full object-cover object-center rounded-lg px-24 pb-5"
+  >
+</div>
+
+
+<nav class="text-sm text-gray-500 mb-4" aria-label="Breadcrumb">
+  <ol class="flex flex-wrap items-center space-x-1">
+    <!-- Home -->
+    <li>
+      <a href="/" class="hover:underline text-gray-600">Home</a>
+    </li>
+
+    
+      <!-- › Category -->
+      <li><span class="mx-1 text-gray-400">›</span></li>
+      <li>
+        <a href="/category/cloud/" class="hover:underline text-gray-600">
+          Cloud
+        </a>
+      </li>
+
+      <!-- › Post Title -->
+      <li><span class="mx-1 text-gray-400">›</span></li>
+      <li class="text-gray-800 font-medium">Manual vs Terraform: What's the Best AWS Workflow for Data Engineers?</li>
+
+    
+  </ol>
+</nav>
+
+<div class="flex flex-col md:flex-row py-6 md:py-12 justify-between">
+  <div class="w-full md:w-3/12 pr-3">
+    <p class="text-sm text-gray-500">Last updated: July 04, 2025</p>
+    
+
+    
+      <div class="hidden md:block">
+        <h3 class="text-sm font-medium mb-1">Categories</h3>
+        
+          <a class="p-1 px-3 mr-1 mb-1 inline-block text-xs font-mono rounded bg-blue-200 text-blue-800 hover:bg-green-200 hover:text-blue-800 transition duration-300 ease-in-out" href="/category/cloud">Cloud</a>
+        
+          <a class="p-1 px-3 mr-1 mb-1 inline-block text-xs font-mono rounded bg-blue-200 text-blue-800 hover:bg-green-200 hover:text-blue-800 transition duration-300 ease-in-out" href="/category/data-engineering">Data Engineering</a>
+        
+          <a class="p-1 px-3 mr-1 mb-1 inline-block text-xs font-mono rounded bg-blue-200 text-blue-800 hover:bg-green-200 hover:text-blue-800 transition duration-300 ease-in-out" href="/category/devops">DevOps</a>
+        
+      </div>
+    
+  </div>
+
+  <section class="">
+    <div class="prose">
+      <h2 id="introduction-terraform-or-manual-aws-every-engineer-hits-this-crossroads">Introduction: Terraform or Manual AWS? Every Engineer Hits This Crossroads</h2>
+
+<p>When I first started building cloud pipelines as a data engineer, I dove into the AWS Console and began clicking through tutorials. I spun up an S3 bucket, wrote a Lambda function in the inline editor, and copied JSON into IAM policies without really knowing what they did. It worked, kind of. But when I wanted to recreate that project later, I couldn’t remember half the steps I took.</p>
+
+<p>That’s when I heard about Terraform.</p>
+
+<p>But I asked the same question you’re probably asking:</p>
+
+<blockquote>
+  <p>“Should I build everything manually first, or should I use Terraform from the beginning?”</p>
+</blockquote>
+
+<p>This article explores both sides, with practical guidance on when and how to use Terraform effectively, especially in AWS data engineering workflows.</p>
+
+<hr />
+
+<h2 id="manual-aws-setup-the-good-the-bad-the-clicky">Manual AWS Setup: The Good, The Bad, The Clicky</h2>
+
+<h3 id="pros">Pros:</h3>
+
+<ul>
+  <li><strong>Faster to experiment</strong>: Great for learning services like Glue, Lambda, or Step Functions hands-on.</li>
+  <li><strong>Visual feedback</strong>: See what you’re building immediately.</li>
+  <li><strong>Quick debugging</strong>: Easier to inspect logs and tweak values manually.</li>
+</ul>
+
+<h3 id="cons">Cons:</h3>
+
+<ul>
+  <li><strong>No reproducibility</strong>: If something breaks or needs to be rebuilt, you’re back to square one.</li>
+  <li><strong>Permission drift</strong>: Manually attached policies become hard to track.</li>
+  <li><strong>Zero version control</strong>: Your infra lives in your memory, not in Git.</li>
+  <li><strong>Scaling pain</strong>: Impossible to scale to multi-environment (dev/stage/prod) setups cleanly.</li>
+</ul>
+
+<p>Manual is fine for prototypes. But once your pipeline matures, it becomes technical debt.</p>
+
+<hr />
+
+<h2 id="terraform-first-workflow-aws-the-right-way">Terraform-First Workflow: AWS the Right Way</h2>
+
+<h3 id="pros-1">Pros:</h3>
+
+<ul>
+  <li><strong>Declarative infrastructure</strong>: Everything is reproducible, testable, and trackable in version control.</li>
+  <li><strong>Modular reusability</strong>: Use modules to share logic across environments.</li>
+  <li><strong>Team-friendly</strong>: Multiple engineers can understand and collaborate on infra.</li>
+  <li><strong>Tagging and cost control</strong>: Easier to manage costs with consistent tagging and policy enforcement.</li>
+</ul>
+
+<h3 id="cons-1">Cons:</h3>
+
+<ul>
+  <li><strong>Learning curve</strong>: Understanding Terraform syntax, state files, and IAM roles can be overwhelming.</li>
+  <li><strong>Slower iteration</strong>: Takes longer to prototype new AWS services unless you know what to expect.</li>
+</ul>
+
+<hr />
+
+<h2 id="real-aws-example-data-pipeline-with-manual-first-terraform-later">Real AWS Example: Data Pipeline with Manual First, Terraform Later</h2>
+
+<p>Here’s how many data engineers approach a project like a stock price ETL pipeline:</p>
+
+<h3 id="phase-1-manual-exploration">Phase 1: Manual (Exploration)</h3>
+
+<ul>
+  <li><strong>S3</strong>: Create bucket for raw data</li>
+  <li><strong>Lambda</strong>: Use API to fetch data and store in <code class="language-plaintext highlighter-rouge">/raw/</code></li>
+  <li><strong>Glue</strong>: Build a PySpark script to transform JSON to Parquet</li>
+  <li><strong>Athena</strong>: Manually define schema, query outputs</li>
+  <li><strong>Step Functions</strong>: Connect steps manually to test flow</li>
+</ul>
+
+<p>You learn fast, but you forget faster.</p>
+
+<h3 id="phase-2-incremental-terraform-adoption">Phase 2: Incremental Terraform Adoption</h3>
+
+<div class="language-hcl highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">module</span> <span class="s2">"s3"</span> <span class="p">{</span>
+  <span class="nx">source</span> <span class="o">=</span> <span class="s2">"./modules/s3"</span>
+  <span class="nx">bucket_name</span> <span class="o">=</span> <span class="nx">var</span><span class="p">.</span><span class="nx">bucket_name</span>
+<span class="p">}</span>
+
+<span class="nx">module</span> <span class="s2">"lambda"</span> <span class="p">{</span>
+  <span class="nx">source</span> <span class="o">=</span> <span class="s2">"./modules/lambda"</span>
+  <span class="nx">bucket_name</span> <span class="o">=</span> <span class="nx">module</span><span class="p">.</span><span class="nx">s3</span><span class="p">.</span><span class="nx">bucket_name</span>
+  <span class="nx">api_key</span>     <span class="o">=</span> <span class="nx">var</span><span class="p">.</span><span class="nx">api_key</span>
+<span class="p">}</span>
+
+<span class="nx">module</span> <span class="s2">"glue"</span> <span class="p">{</span>
+  <span class="nx">source</span> <span class="o">=</span> <span class="s2">"./modules/glue"</span>
+  <span class="nx">bucket_name</span> <span class="o">=</span> <span class="nx">module</span><span class="p">.</span><span class="nx">s3</span><span class="p">.</span><span class="nx">bucket_name</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>You start with S3 and Lambda, then add Glue and Step Functions. Use <code class="language-plaintext highlighter-rouge">terraform plan -target=module.lambda</code> to test in isolation.</p>
+
+<hr />
+
+<h2 id="best-practices-for-using-terraform-as-a-data-engineer">Best Practices for Using Terraform as a Data Engineer</h2>
+
+<h3 id="1-start-small-then-expand">1. Start Small, Then Expand</h3>
+
+<p>Don’t Terraform your entire cloud from day one. Begin with a working manual prototype. Once stable, convert to IaC.</p>
+
+<h3 id="2-use-iam-least-privilege-from-the-start">2. Use IAM Least Privilege from the Start</h3>
+
+<p>Avoid <code class="language-plaintext highlighter-rouge">*</code> policies in Terraform. Write and test scoped roles and validate with CloudTrail or AWS Access Analyzer.</p>
+
+<h3 id="3-modularize-reusable-components">3. Modularize Reusable Components</h3>
+
+<p>Encapsulate each major service (S3, Lambda, Glue) into its own module. This keeps things testable and composable.</p>
+
+<h3 id="4-leverage-tags-and-outputs">4. Leverage Tags and Outputs</h3>
+
+<p>Use <code class="language-plaintext highlighter-rouge">tags</code> consistently and expose key <code class="language-plaintext highlighter-rouge">output</code> values for debugging or referencing across modules.</p>
+
+<h3 id="5-schedule--orchestrate-with-step-functions--eventbridge">5. Schedule &amp; Orchestrate with Step Functions + EventBridge</h3>
+
+<p>You can trigger your Terraform-provisioned pipeline daily using cron expressions like:</p>
+
+<div class="language-hcl highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">schedule_expression</span> <span class="o">=</span> <span class="s2">"cron(0 6 * * ? *)"</span>  <span class="c1"># 6 AM UTC</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="what-about-athena-and-schema-evolution">What About Athena and Schema Evolution?</h2>
+
+<p>Use Terraform to define Glue Catalog Tables for Athena, but beware of <strong>schema drift</strong>. If your JSON structure changes, keep Athena queries resilient by defining them with <code class="language-plaintext highlighter-rouge">serde</code> options or partition-aware layouts (like <code class="language-plaintext highlighter-rouge">symbol=date</code> folders).</p>
+
+<hr />
+
+<h2 id="key-takeaways-build-it-then-code-it">Key Takeaways: Build It, Then Code It</h2>
+
+<ul>
+  <li>Manual AWS is great for learning but not for scaling.</li>
+  <li>Terraform makes your infrastructure repeatable, shareable, and safer.</li>
+  <li>For data engineers, the best path is usually <strong>manual-first, Terraform-second.</strong></li>
+  <li>Use Terraform to solidify knowledge and productionize your pipeline.</li>
+  <li>Start modular, test with <code class="language-plaintext highlighter-rouge">-target</code>, and iterate.</li>
+</ul>
+
+<hr />
+
+<h2 id="final-thoughts">Final Thoughts</h2>
+
+<p>The real world is messy. Start with exploration, then enforce structure. Terraform is not just a tool, it’s a way of <strong>thinking</strong>. Once your AWS data workflow works manually, freeze it in Terraform and build the foundation for scale.</p>
+
+<hr />
+
+<h2 id="more-articles">More Articles</h2>
+
+<ul>
+  <li><a href="/what-is-terraform-guide/">What Is Terraform and How to Use It (2025 Guide)</a></li>
+  <li><a href="/how-terraform-works-explained/">How Terraform Really Works Under the Hood (Modules, State, DAGs Explained)</a></li>
+</ul>
+
+<hr />
+
+      
+<section class="mt-10" aria-labelledby="faq-heading">
+  <h2 id="faq" class="text-2xl font-semibold mb-4">Frequently Asked Questions</h2>
+  <dl class="space-y-6">
+    
+    <div>
+      <dt class="font-medium text-gray-800">Q: Should I use Terraform or manual AWS when building my first data pipeline?</dt>
+      <dd class="text-gray-700">A: Start manually to learn the services, but use Terraform to scale, document, and secure your infrastructure in production.</dd>
+    </div>
+    
+    <div>
+      <dt class="font-medium text-gray-800">Q: Can I mix manual AWS setup and Terraform in one project?</dt>
+      <dd class="text-gray-700">A: Yes, but it's best to migrate manual components into Terraform incrementally for consistency and automation.</dd>
+    </div>
+    
+  </dl>
+</section>
+
+    </div>
+    
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    
+    {
+      "@type": "Question",
+      "name": "Should I use Terraform or manual AWS when building my first data pipeline?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Start manually to learn the services, but use Terraform to scale, document, and secure your infrastructure in production."
+      }
+    },
+    
+    {
+      "@type": "Question",
+      "name": "Can I mix manual AWS setup and Terraform in one project?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, but it's best to migrate manual components into Terraform incrementally for consistency and automation."
+      }
+    }
+    
+  ]
+}
+</script>
+
+  </section>
+      <!-- Sticky Sidebar TOC -->
+    
+    <aside class="hidden md:block md:w-1/4 md:pl-4">
+      <nav class="sticky top-24 bg-white border rounded-xl p-4 shadow-sm text-sm">
+        <h2 class="text-lg font-semibold mb-3">Table of Contents</h2>
+        <ul class="space-y-2">
+          
+            <li>
+              <a href="#introduction-terraform-or-manual-aws-every-engineer-hits-this-crossroads" class="text-blue-600 hover:underline">
+                Introduction: Terraform or Manual AWS? Every Engineer Hits This Crossroads
+              </a>
+            </li>
+          
+            <li>
+              <a href="#manual-aws-setup-the-good-the-bad-the-clicky" class="text-blue-600 hover:underline">
+                Manual AWS Setup: The Good, The Bad, The Clicky
+              </a>
+            </li>
+          
+            <li>
+              <a href="#terraform-first-workflow-aws-the-right-way" class="text-blue-600 hover:underline">
+                Terraform-First Workflow: AWS the Right Way
+              </a>
+            </li>
+          
+            <li>
+              <a href="#real-aws-example-data-pipeline-with-manual-first-terraform-later" class="text-blue-600 hover:underline">
+                Real AWS Example: Data Pipeline with Manual First, Terraform Later
+              </a>
+            </li>
+          
+            <li>
+              <a href="#best-practices-for-using-terraform-as-a-data-engineer" class="text-blue-600 hover:underline">
+                Best Practices for Using Terraform as a Data Engineer
+              </a>
+            </li>
+          
+            <li>
+              <a href="#what-about-athena-and-schema-evolution" class="text-blue-600 hover:underline">
+                What About Athena and Schema Evolution?
+              </a>
+            </li>
+          
+            <li>
+              <a href="#key-takeaways-build-it-then-code-it" class="text-blue-600 hover:underline">
+                Key Takeaways: Build It, Then Code It
+              </a>
+            </li>
+          
+            <li>
+              <a href="#final-thoughts" class="text-blue-600 hover:underline">
+                Final Thoughts
+              </a>
+            </li>
+          
+            <li>
+              <a href="#more-articles" class="text-blue-600 hover:underline">
+                More Articles
+              </a>
+            </li>
+          
+            <li>
+              <a href="#faq" class="text-blue-600 hover:underline">
+                Frequently Asked Questions
+              </a>
+            </li>
+          
+        </ul>
+      </nav>
+    </aside>
+    
+</div>
+
+
+  <div class="py-6 mt-6 border-t-2 block md:hidden">
+    <h3 class="text-sm font-medium mb-1">Categories</h3>
+    <div>
+      
+        <a class="p-1 px-3 mr-1 mb-1 inline-block text-xs font-mono rounded bg-blue-200 text-blue-800 hover:bg-green-200 hover:text-blue-800 transition duration-300 ease-in-out" href="/category/cloud">Cloud</a>
+      
+        <a class="p-1 px-3 mr-1 mb-1 inline-block text-xs font-mono rounded bg-blue-200 text-blue-800 hover:bg-green-200 hover:text-blue-800 transition duration-300 ease-in-out" href="/category/data-engineering">Data Engineering</a>
+      
+        <a class="p-1 px-3 mr-1 mb-1 inline-block text-xs font-mono rounded bg-blue-200 text-blue-800 hover:bg-green-200 hover:text-blue-800 transition duration-300 ease-in-out" href="/category/devops">DevOps</a>
+      
+    </div>
+  </div>
+
+
+<section class="mt-12 bg-blue-50 border border-blue-100 rounded-xl p-6 py-10 text-center shadow-sm">
+  <h2 class="text-xl md:text-2xl font-semibold text-blue-800 mb-3">
+    Want to keep learning?
+  </h2>
+  <p class="text-gray-700 mb-6 max-w-2xl mx-auto">
+    Explore more tutorials, tools, and beginner guides across categories designed to help you grow your skills in real-world tech.
+  </p>
+  <a href="/categories/"
+     class="inline-block bg-blue-600 text-white font-semibold px-6 py-3 rounded-lg shadow-md hover:bg-blue-700 transition">
+    Browse All Categories →
+  </a>
+</section>
+      </article>
+    </main>
+
+  <footer class="w-full bg-gray-900 text-gray-300 py-10 px-6 mt-12">
+  <!-- Cookie Notice -->
+<div id="cookie-banner" class="fixed bottom-0 inset-x-0 bg-gray-900 text-white text-sm p-4 z-50 hidden">
+  <div class="max-w-4xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-4">
+    <p class="text-center sm:text-left">
+      We use cookies to improve your experience. By continuing to use this site, you agree to our 
+      <a href="/privacy-policy/" class="underline">Privacy Policy</a>.
+    </p>
+    <button id="cookie-accept" class="bg-white text-gray-900 px-4 py-1 rounded hover:bg-gray-200 transition text-sm">
+      Accept
+    </button>
+  </div>
+</div>
+
+<script>
+  // Show banner if consent not given
+  if (!localStorage.getItem('cookieAccepted')) {
+    document.getElementById('cookie-banner').classList.remove('hidden');
+  }
+
+  // Accept button
+  document.getElementById('cookie-accept')?.addEventListener('click', function () {
+    localStorage.setItem('cookieAccepted', 'true');
+    document.getElementById('cookie-banner').classList.add('hidden');
+  });
+</script>
+
+  <div class="max-w-4xl mx-auto space-y-6 text-sm">
+
+    <!-- Navigation -->
+    <nav class="flex flex-wrap justify-center gap-4 text-gray-400">
+      <a href="/" class="hover:text-white transition">Home</a>
+      <a href="/about/" class="hover:text-white transition">About</a>
+      <a href="/blog/" class="hover:text-white transition">Blog</a>
+      <a href="/contact/" class="hover:text-white transition">Contact</a>
+      <a href="/privacy-policy/" class="hover:text-white transition">Privacy</a>
+      <a href="/disclaimer/" class="hover:text-white transition">Disclaimer</a>
+    </nav>
+
+    <!-- Site Description -->
+    <p class="text-center text-gray-400">
+      Built by <span class="text-white font-semibold">Hardy Fenam</span> — sharing practical tech tips, study guides, and online course reviews for aspiring developers.
+    </p>
+
+    <!-- Legal / Affiliate Disclosure -->
+    <p class="text-center text-gray-500 text-xs">
+      © 2025 Hardy Fenam. This site may contain affiliate links. 
+      <a href="/disclaimer/" class="underline hover:text-white transition">Learn more</a>.
+    </p>
+
+    <!-- Social Links -->
+    <div class="flex justify-center space-x-4 text-gray-400">
+      <a href="https://github.com/hhrh" target="_blank" rel="noopener" class="hover:text-white transition">GitHub</a>
+      <a href="https://linkedin.com/in/hardyf" target="_blank" rel="noopener" class="hover:text-white transition">LinkedIn</a>
+    </div>
+
+  </div>
+</footer>
+  <script type="text/javascript" src="/assets/js/hamburger.js" defer></script>
+</body>
+</html>

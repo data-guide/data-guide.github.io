@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta content="ie=edge" http-equiv="x-ua-compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta name="google-site-verification" content="PmUkhC6SLY1aQxqNeaP40hf0j4IdHeBw-6J_XTqzA1M" />
+
+    <link rel="icon" href="/favicon.ico">
+    <link href="/assets/css/style.css" rel="stylesheet">
+
+    
+
+<!-- Basic Meta Tags -->
+<title>How to Design Scalable Data Engineering Pipelines in 2025 | data guide</title>
+<meta name="description" content="Learn how to design scalable data engineering pipelines in 2025 with modern tools, architectural patterns, and real-time best practices for reliability and growth.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://data-guide.github.io/scalable-data-engineering-pipelines/">
+<meta name="author" content="Hardy Fenam">
+
+
+
+<!-- Open Graph Tags -->
+<meta property="og:type" content="article">
+<meta property="og:title" content="How to Design Scalable Data Engineering Pipelines in 2025">
+<meta property="og:description" content="Learn how to design scalable data engineering pipelines in 2025 with modern tools, architectural patterns, and real-time best practices for reliability and growth.">
+<meta property="og:url" content="https://data-guide.github.io/scalable-data-engineering-pipelines/">
+<meta property="og:image" content="https://data-guide.github.ioassets/post_images/img4.avif">
+<meta property="og:site_name" content="data guide">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2025-06-27T00:00:00-07:00">
+
+<!-- Twitter Cards -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="How to Design Scalable Data Engineering Pipelines in 2025">
+<meta name="twitter:description" content="Learn how to design scalable data engineering pipelines in 2025 with modern tools, architectural patterns, and real-time best practices for reliability and growth.">
+<meta name="twitter:image" content="https://data-guide.github.ioassets/post_images/img4.avif">
+<meta name="twitter:creator" content="@HFenam55511">
+<meta name="twitter:site" content="@HFenam55511">
+    <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://data-guide.github.io/"
+      }
+      
+        ,
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Data Engineering",
+          "item": "https://data-guide.github.io/category/data-engineering/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "How to Design Scalable Data Engineering Pipelines in 2025",
+          "item": "https://data-guide.github.io/scalable-data-engineering-pipelines/"
+        }
+        
+      
+    ]
+  }
+  </script>
+    
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "How to Design Scalable Data Engineering Pipelines in 2025",
+  "description": "Learn how to design scalable data engineering pipelines in 2025 with modern tools, architectural patterns, and real-time best practices for reliability and growth.",
+  "author": {
+    "@type": "Person",
+    "name": "Hardy Fenam"
+  },
+  "datePublished": "2025-06-27T00:00:00-07:00",
+  "dateModified": "2025-06-27T00:00:00-07:00",
+  "image": "https://data-guide.github.ioassets/post_images/img4.avif",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://data-guide.github.io/scalable-data-engineering-pipelines/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "data guide",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://data-guide.github.io/assets/images/logo/logo_red.png"
+    }
+  },
+  "url": "https://data-guide.github.io/scalable-data-engineering-pipelines/"
+}
+</script>
+
+    
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-88BS0VNE3L"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-88BS0VNE3L');
+</script>
+  </head>
+<body class="page  min-h-screen flex flex-col">
+  <div id="menu-container"
+  class=" bg-blue-600 h-screen w-screen fixed z-50 p-8 flex-col items-center justify-around bg-gradient-to-b from-orange-600 to-yellow-300 opacity-90 overflow-hidden hidden">
+  <div id="menu-close" class="top-7 right-7 absolute">
+    <svg aria-hidden="true" focusable="false" class="h-6 text-white" role="img" xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 352 512">
+      <path fill="currentColor"
+        d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z">
+      </path>
+    </svg>
+  </div>
+  <div class="flex flex-col text-center text-white text-2xl font-bold">
+    
+    <a class="py-2" href="/">Home</a>
+    
+    <a class="py-2" href="/blog/">Blog</a>
+    
+    <a class="py-2" href="/about/">About</a>
+    
+  </div>
+</div>
+  <header class="flex items-center justify-between py-0 px-6 shadow-md top-0 w-full sticky bg-white z-50">
+
+  <div class="logo hidden md:block" role="banner">
+  <a class="flex items-start hover:opacity-70 transition duration-300 ease-in-out space-x-4" href="/" aria-label="data guide homepage">
+    
+    <img 
+      class="mr-2"
+      src="/assets/images/logo/logo_red.png"
+      alt="data guide logo"
+      height="48px"
+      width="48px"
+      loading="lazy"
+    />
+    
+    <div class="flex flex-col leading-tight">
+      
+        <span class="text-2xl font-sans font-semibold"><strong>Data Guide</strong></span>
+      
+      <span class="text-sm text-gray-500 font-sans">data-guide.github.io</span>
+    </div>
+  </a>
+</div>
+
+<div class="logo-mobile block md:hidden" role="banner">
+  <a class="flex items-center hover:opacity-70 transition duration-300 ease-in-out" href="/" aria-label="data guide homepage">
+    
+    <img 
+      src="/assets/images/logo/logo_red.png"
+      alt="data guide mobile logo"
+      height="36px"
+      width="36px"
+      loading="lazy"
+    />
+    
+    
+    <span class="ml-2 text-lg font-sans font-semibold"></span>
+    
+  </a>
+</div>
+  <div class="flex" id="menu-trigger">
+    <svg aria-hidden="true" class="text-black" data-icon="bars" data-prefix="fas" focusable="false" height="24"
+      role="img" viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z"
+        fill="currentColor"></path>
+    </svg>
+
+  </div>
+</header>
+
+    <main class="mx-auto px-6 md:px-4 flex-grow" role="main">
+      <article>
+        
+
+
+
+
+<section class="pt-16 pb-8 md:pb-14 lg:pb-10 text-center" id="top">
+  <div class="max-w-3xl mx-auto px-6 md:px-0">
+
+    <h1 class="text-2xl md:text-3xl lg:text-4xl font-extrabold tracking-tight leading-tight">
+      How to Design Scalable Data Engineering Pipelines in 2025
+    </h1>
+
+    
+      <p class="mt-4 text-lg md:text-xl text-gray-600 leading-relaxed max-w-2xl mx-auto">
+        Learn how to design scalable data engineering pipelines in 2025 with modern tools, architectural patterns, and real-time best practices for reliability and growth.
+      </p>
+    
+
+  </div>
+</section>
+
+
+  <div class="flex flex-col pb-3 md:hidden">
+    
+  </div>
+
+
+<div class="relative w-full aspect-[5/2] overflow-hidden rounded-lg">
+  <img
+    src="/assets/post_images/img4.avif"
+    alt="Illustration of scalable data pipelines and cloud architecture in 2025"
+    loading="lazy"
+    class="absolute top-0 left-0 w-full h-full object-cover object-center rounded-lg px-24 pb-5"
+  >
+</div>
+
+
+<nav class="text-sm text-gray-500 mb-4" aria-label="Breadcrumb">
+  <ol class="flex flex-wrap items-center space-x-1">
+    <!-- Home -->
+    <li>
+      <a href="/" class="hover:underline text-gray-600">Home</a>
+    </li>
+
+    
+      <!-- › Category -->
+      <li><span class="mx-1 text-gray-400">›</span></li>
+      <li>
+        <a href="/category/data-engineering/" class="hover:underline text-gray-600">
+          Data Engineering
+        </a>
+      </li>
+
+      <!-- › Post Title -->
+      <li><span class="mx-1 text-gray-400">›</span></li>
+      <li class="text-gray-800 font-medium">How to Design Scalable Data Engineering Pipelines in 2025</li>
+
+    
+  </ol>
+</nav>
+
+<div class="flex flex-col md:flex-row py-6 md:py-12 justify-between">
+  <div class="w-full md:w-3/12 pr-3">
+    <p class="text-sm text-gray-500">Last updated: June 27, 2025</p>
+    
+
+    
+      <div class="hidden md:block">
+        <h3 class="text-sm font-medium mb-1">Categories</h3>
+        
+          <a class="p-1 px-3 mr-1 mb-1 inline-block text-xs font-mono rounded bg-blue-200 text-blue-800 hover:bg-green-200 hover:text-blue-800 transition duration-300 ease-in-out" href="/category/data-engineering">Data Engineering</a>
+        
+          <a class="p-1 px-3 mr-1 mb-1 inline-block text-xs font-mono rounded bg-blue-200 text-blue-800 hover:bg-green-200 hover:text-blue-800 transition duration-300 ease-in-out" href="/category/tutorials">Tutorials</a>
+        
+          <a class="p-1 px-3 mr-1 mb-1 inline-block text-xs font-mono rounded bg-blue-200 text-blue-800 hover:bg-green-200 hover:text-blue-800 transition duration-300 ease-in-out" href="/category/core-concepts">Core Concepts</a>
+        
+      </div>
+    
+  </div>
+
+  <section class="">
+    <div class="prose">
+      <h2 id="introduction">Introduction: Why Scalability is Non-Negotiable in 2025</h2>
+
+<p>In 2025, data volumes have exploded beyond expectations. With the proliferation of AI, IoT devices, mobile apps, and global user bases, enterprises are handling petabytes of data daily. The question is no longer “can you process data?”, it’s can your pipelines scale as your business grows?</p>
+
+<p>Scalable data engineering pipelines are the backbone of modern decision-making. They power everything from real-time fraud detection to personalized recommendations. Designing them correctly from the outset ensures resilience, low latency, and cost-efficiency. This guide will walk you through the critical principles, architectures, tools, and practices you need to design pipelines ready for the demands of 2025 and beyond.</p>
+
+<h2 id="modern-pipeline-types">Overview of Modern Pipeline Types</h2>
+
+<h3 id="batch-pipelines">Batch Pipelines</h3>
+
+<p>Batch pipelines process large chunks of data at scheduled intervals. Ideal for historical analytics, reporting, and ETL jobs.</p>
+
+<ul>
+  <li>Examples: Nightly customer segmentation, monthly revenue reports</li>
+  <li>Pros: Reliable, cost-effective, well-supported</li>
+  <li>Cons: High latency, not suitable for real-time use cases</li>
+</ul>
+
+<h3 id="streaming-pipelines">Streaming Pipelines</h3>
+
+<p>Streaming pipelines process data in near real-time, often event-by-event.</p>
+
+<ul>
+  <li>Examples: Fraud detection, IoT telemetry processing</li>
+  <li>Pros: Low latency, real-time insights</li>
+  <li>Cons: More complex, harder to debug</li>
+</ul>
+
+<h3 id="hybrid-pipelines">Hybrid Pipelines</h3>
+
+<p>Hybrid combines batch and streaming, often with a speed layer for real-time and a batch layer for accuracy.</p>
+
+<ul>
+  <li>Examples: Lambda architecture (real-time + batch)</li>
+  <li>Pros: Best of both worlds</li>
+  <li>Cons: Complex architecture and maintenance overhead</li>
+</ul>
+
+<h2 id="key-design-principles">Key Design Principles for Scalable Pipelines</h2>
+
+<h3 id="modularity">Modularity</h3>
+
+<p>Break pipelines into modular components: ingestion, transformation, validation, storage. This enables easier testing, reusability, and scalability.</p>
+
+<h3 id="fault-tolerance">Fault-Tolerance</h3>
+
+<p>Assume failure. Design retries, circuit breakers, dead-letter queues, and alerting mechanisms.</p>
+
+<h3 id="idempotency">Idempotency</h3>
+
+<p>Make operations idempotent so retries don’t cause data duplication or corruption.</p>
+
+<blockquote>
+  <p><strong>Idempotency can make or break your pipeline’s reliability.</strong>
+Learn how to get it right in our practical guide: <a href="/data-engineering-idempotency/">Understanding Idempotency in Data Engineering: A 2025 Guide</a>.</p>
+</blockquote>
+
+<h3 id="data-quality">Data Quality</h3>
+
+<p>Include validation layers to check for schema mismatches, nulls, duplicates, and anomalies.</p>
+
+<h3 id="orchestration">Orchestration</h3>
+
+<p>Use tools like Apache Airflow, Prefect, or cloud-native orchestrators to manage task dependencies and schedules.</p>
+
+<h3 id="monitoring--observability">Monitoring &amp; Observability</h3>
+
+<p>Implement end-to-end observability using tools like Prometheus, Grafana, or OpenTelemetry. Log lineage, track metrics, and surface errors quickly.</p>
+
+<h2 id="technology-stack">Technology Stack Options in 2025</h2>
+
+<h3 id="open-source-frameworks">Open Source Frameworks</h3>
+
+<ul>
+  <li>Apache Spark: Great for batch and mini-batch processing, SQL, and ML pipelines.</li>
+  <li>Apache Kafka: Event streaming backbone, ideal for decoupling producers and consumers.</li>
+  <li>Apache Flink: Stream-first framework for low-latency processing with complex event handling.</li>
+</ul>
+
+<h3 id="managed-cloud-services">Managed Cloud Services</h3>
+
+<ul>
+  <li>AWS Glue: Serverless ETL with Spark and crawler support.</li>
+  <li>GCP Dataflow: Fully managed Flink-based service.</li>
+  <li>Azure Data Factory: Visual pipeline designer with support for hybrid and cloud-native data workflows.</li>
+</ul>
+
+<h3 id="storage-layers">Storage Layers</h3>
+
+<ul>
+  <li>Data Lakes: Amazon S3, Azure Data Lake, GCS</li>
+  <li>Data Warehouses: Snowflake, BigQuery, Redshift</li>
+  <li>Lakehouses: Databricks, Apache Iceberg, Delta Lake</li>
+</ul>
+
+<h2 id="architectural-patterns">Architectural Patterns for Scalability</h2>
+
+<h3 id="lambda-architecture">Lambda Architecture</h3>
+
+<p>Combines batch and streaming layers with a serving layer to reconcile both.</p>
+
+<ul>
+  <li>Use Case: When both real-time and historical accuracy are essential</li>
+</ul>
+
+<h3 id="kappa-architecture">Kappa Architecture</h3>
+
+<p>Pure streaming approach with reprocessing capability by replaying logs.</p>
+
+<ul>
+  <li>Use Case: Real-time dominant pipelines where batch adds complexity</li>
+</ul>
+
+<h3 id="microservices-based-pipelines">Microservices-based Pipelines</h3>
+
+<p>Each pipeline component is a microservice communicating over APIs or event streams.</p>
+
+<ul>
+  <li>Use Case: Teams working independently with clear ownership and scalability boundaries</li>
+</ul>
+
+<h3 id="lakehouse-pattern">Lakehouse Pattern</h3>
+
+<p>Blends the flexibility of data lakes with the performance of data warehouses.</p>
+
+<ul>
+  <li>Use Case: When fast queries and low-cost storage are needed together</li>
+</ul>
+
+<h2 id="best-practices-anti-patterns">Best Practices &amp; Anti-Patterns</h2>
+
+<h3 id="best-practices">Best Practices</h3>
+
+<ul>
+  <li>Use schema registries for consistent data formats</li>
+  <li>Adopt CI/CD for pipelines</li>
+  <li>Implement rollback strategies for failed deployments</li>
+  <li>Test with production-like data</li>
+</ul>
+
+<h3 id="anti-patterns">Anti-Patterns</h3>
+
+<ul>
+  <li>Tightly coupled systems: Limits scalability and fault isolation</li>
+  <li>No monitoring: Blind to failures until users complain</li>
+  <li>Hardcoded logic: Reduces reusability and flexibility</li>
+</ul>
+
+<h2 id="performance-tuning">Performance Tuning Tips</h2>
+
+<ul>
+  <li>Partitioning: Optimize S3 or Hive partitions for query speed</li>
+  <li>Caching: Use Spark caching or Redis for repeated access</li>
+  <li>Resource Sizing: Right-size worker nodes and autoscale with usage</li>
+  <li>Parallelism: Maximize task concurrency without overwhelming I/O</li>
+</ul>
+
+<h2 id="case-studies">Real-World Case Studies</h2>
+
+<p>Example 1: Ingest → Transform → Analytics Pipeline</p>
+
+<ul>
+  <li>Tools: Kafka → Flink → S3 → Athena/Snowflake</li>
+  <li>Use Case: E-commerce clickstream tracking</li>
+  <li>Scalability Wins: Streaming ingestion, decoupled processing, queryable lakes</li>
+</ul>
+
+<p>Example 2: Streaming CDC Pipeline</p>
+
+<ul>
+  <li>Tools: Debezium → Kafka → Flink → BigQuery</li>
+  <li>Use Case: Syncing MySQL changes to warehouse in near real-time</li>
+  <li>Scalability Wins: Incremental changes, no full-table reloads, cloud-native scalability</li>
+</ul>
+
+<hr />
+
+<p>With this comprehensive approach, you’re not just building data pipelines; you’re building future-proof infrastructure for intelligent, real-time decision-making in a world that runs on data.</p>
+
+<hr />
+
+<h2 id="explore-more">Explore More:</h2>
+
+<ul>
+  <li><a href="/what-is-etl-python-example/">What is ETL? A Beginner’s Guide with Python Examples</a></li>
+  <li><a href="/data-engineering-trends/">Data Engineering Trends 2025: The Evolution of Data Engineering</a></li>
+  <li><a href="/data-engineering-idempotency/">Understanding Idempotency in Data Engineering: A 2025 Guide</a></li>
+</ul>
+
+<hr />
+
+      
+<section class="mt-10" aria-labelledby="faq-heading">
+  <h2 id="faq" class="text-2xl font-semibold mb-4">Frequently Asked Questions</h2>
+  <dl class="space-y-6">
+    
+    <div>
+      <dt class="font-medium text-gray-800">Q: What are the key components of a scalable data pipeline in 2025?</dt>
+      <dd class="text-gray-700">A: Key components include modular design, real-time streaming capabilities, fault-tolerance, cloud-native tools, and strong observability.</dd>
+    </div>
+    
+    <div>
+      <dt class="font-medium text-gray-800">Q: Which technologies are best for building modern data pipelines?</dt>
+      <dd class="text-gray-700">A: Popular technologies include Apache Spark, Kafka, Flink, and managed services like AWS Glue, GCP Dataflow, and Azure Data Factory.</dd>
+    </div>
+    
+    <div>
+      <dt class="font-medium text-gray-800">Q: What’s the difference between batch and streaming pipelines?</dt>
+      <dd class="text-gray-700">A: Batch pipelines process large volumes of data at intervals, ideal for historical analysis. Streaming pipelines handle data in real-time, allowing instant decision-making and analytics. Hybrid models combine both for flexibility and performance.</dd>
+    </div>
+    
+    <div>
+      <dt class="font-medium text-gray-800">Q: How do you monitor and debug scalable data pipelines?</dt>
+      <dd class="text-gray-700">A: Use observability tools like Prometheus, Grafana, or OpenTelemetry to track metrics, logs, and traces. Set up alerts for failures, monitor throughput and latency, and use lineage tracking to trace data issues end-to-end.</dd>
+    </div>
+    
+  </dl>
+</section>
+
+    </div>
+    
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    
+    {
+      "@type": "Question",
+      "name": "What are the key components of a scalable data pipeline in 2025?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Key components include modular design, real-time streaming capabilities, fault-tolerance, cloud-native tools, and strong observability."
+      }
+    },
+    
+    {
+      "@type": "Question",
+      "name": "Which technologies are best for building modern data pipelines?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Popular technologies include Apache Spark, Kafka, Flink, and managed services like AWS Glue, GCP Dataflow, and Azure Data Factory."
+      }
+    },
+    
+    {
+      "@type": "Question",
+      "name": "What’s the difference between batch and streaming pipelines?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Batch pipelines process large volumes of data at intervals, ideal for historical analysis. Streaming pipelines handle data in real-time, allowing instant decision-making and analytics. Hybrid models combine both for flexibility and performance."
+      }
+    },
+    
+    {
+      "@type": "Question",
+      "name": "How do you monitor and debug scalable data pipelines?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Use observability tools like Prometheus, Grafana, or OpenTelemetry to track metrics, logs, and traces. Set up alerts for failures, monitor throughput and latency, and use lineage tracking to trace data issues end-to-end."
+      }
+    }
+    
+  ]
+}
+</script>
+
+  </section>
+      <!-- Sticky Sidebar TOC -->
+    
+    <aside class="hidden md:block md:w-1/4 md:pl-4">
+      <nav class="sticky top-24 bg-white border rounded-xl p-4 shadow-sm text-sm">
+        <h2 class="text-lg font-semibold mb-3">Table of Contents</h2>
+        <ul class="space-y-2">
+          
+            <li>
+              <a href="#introduction" class="text-blue-600 hover:underline">
+                Introduction
+              </a>
+            </li>
+          
+            <li>
+              <a href="#modern-pipeline-types" class="text-blue-600 hover:underline">
+                Modern Pipeline Types
+              </a>
+            </li>
+          
+            <li>
+              <a href="#key-design-principles" class="text-blue-600 hover:underline">
+                Design Principles
+              </a>
+            </li>
+          
+            <li>
+              <a href="#technology-stack" class="text-blue-600 hover:underline">
+                Technology Stack
+              </a>
+            </li>
+          
+            <li>
+              <a href="#architectural-patterns" class="text-blue-600 hover:underline">
+                Architectural Patterns
+              </a>
+            </li>
+          
+            <li>
+              <a href="#best-practices-anti-patterns" class="text-blue-600 hover:underline">
+                Best Practices & Anti-Patterns
+              </a>
+            </li>
+          
+            <li>
+              <a href="#performance-tuning" class="text-blue-600 hover:underline">
+                Performance Tuning Tips
+              </a>
+            </li>
+          
+            <li>
+              <a href="#case-studies" class="text-blue-600 hover:underline">
+                Case Studies
+              </a>
+            </li>
+          
+            <li>
+              <a href="#explore-more" class="text-blue-600 hover:underline">
+                Explore More
+              </a>
+            </li>
+          
+            <li>
+              <a href="#faq" class="text-blue-600 hover:underline">
+                FAQs
+              </a>
+            </li>
+          
+        </ul>
+      </nav>
+    </aside>
+    
+</div>
+
+
+  <div class="py-6 mt-6 border-t-2 block md:hidden">
+    <h3 class="text-sm font-medium mb-1">Categories</h3>
+    <div>
+      
+        <a class="p-1 px-3 mr-1 mb-1 inline-block text-xs font-mono rounded bg-blue-200 text-blue-800 hover:bg-green-200 hover:text-blue-800 transition duration-300 ease-in-out" href="/category/data-engineering">Data Engineering</a>
+      
+        <a class="p-1 px-3 mr-1 mb-1 inline-block text-xs font-mono rounded bg-blue-200 text-blue-800 hover:bg-green-200 hover:text-blue-800 transition duration-300 ease-in-out" href="/category/tutorials">Tutorials</a>
+      
+        <a class="p-1 px-3 mr-1 mb-1 inline-block text-xs font-mono rounded bg-blue-200 text-blue-800 hover:bg-green-200 hover:text-blue-800 transition duration-300 ease-in-out" href="/category/core-concepts">Core Concepts</a>
+      
+    </div>
+  </div>
+
+
+<section class="mt-12 bg-blue-50 border border-blue-100 rounded-xl p-6 py-10 text-center shadow-sm">
+  <h2 class="text-xl md:text-2xl font-semibold text-blue-800 mb-3">
+    Want to keep learning?
+  </h2>
+  <p class="text-gray-700 mb-6 max-w-2xl mx-auto">
+    Explore more tutorials, tools, and beginner guides across categories designed to help you grow your skills in real-world tech.
+  </p>
+  <a href="/categories/"
+     class="inline-block bg-blue-600 text-white font-semibold px-6 py-3 rounded-lg shadow-md hover:bg-blue-700 transition">
+    Browse All Categories →
+  </a>
+</section>
+      </article>
+    </main>
+
+  <footer class="w-full bg-gray-900 text-gray-300 py-10 px-6 mt-12">
+  <!-- Cookie Notice -->
+<div id="cookie-banner" class="fixed bottom-0 inset-x-0 bg-gray-900 text-white text-sm p-4 z-50 hidden">
+  <div class="max-w-4xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-4">
+    <p class="text-center sm:text-left">
+      We use cookies to improve your experience. By continuing to use this site, you agree to our 
+      <a href="/privacy-policy/" class="underline">Privacy Policy</a>.
+    </p>
+    <button id="cookie-accept" class="bg-white text-gray-900 px-4 py-1 rounded hover:bg-gray-200 transition text-sm">
+      Accept
+    </button>
+  </div>
+</div>
+
+<script>
+  // Show banner if consent not given
+  if (!localStorage.getItem('cookieAccepted')) {
+    document.getElementById('cookie-banner').classList.remove('hidden');
+  }
+
+  // Accept button
+  document.getElementById('cookie-accept')?.addEventListener('click', function () {
+    localStorage.setItem('cookieAccepted', 'true');
+    document.getElementById('cookie-banner').classList.add('hidden');
+  });
+</script>
+
+  <div class="max-w-4xl mx-auto space-y-6 text-sm">
+
+    <!-- Navigation -->
+    <nav class="flex flex-wrap justify-center gap-4 text-gray-400">
+      <a href="/" class="hover:text-white transition">Home</a>
+      <a href="/about/" class="hover:text-white transition">About</a>
+      <a href="/blog/" class="hover:text-white transition">Blog</a>
+      <a href="/contact/" class="hover:text-white transition">Contact</a>
+      <a href="/privacy-policy/" class="hover:text-white transition">Privacy</a>
+      <a href="/disclaimer/" class="hover:text-white transition">Disclaimer</a>
+    </nav>
+
+    <!-- Site Description -->
+    <p class="text-center text-gray-400">
+      Built by <span class="text-white font-semibold">Hardy Fenam</span> — sharing practical tech tips, study guides, and online course reviews for aspiring developers.
+    </p>
+
+    <!-- Legal / Affiliate Disclosure -->
+    <p class="text-center text-gray-500 text-xs">
+      © 2025 Hardy Fenam. This site may contain affiliate links. 
+      <a href="/disclaimer/" class="underline hover:text-white transition">Learn more</a>.
+    </p>
+
+    <!-- Social Links -->
+    <div class="flex justify-center space-x-4 text-gray-400">
+      <a href="https://github.com/hhrh" target="_blank" rel="noopener" class="hover:text-white transition">GitHub</a>
+      <a href="https://linkedin.com/in/hardyf" target="_blank" rel="noopener" class="hover:text-white transition">LinkedIn</a>
+    </div>
+
+  </div>
+</footer>
+  <script type="text/javascript" src="/assets/js/hamburger.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta content="ie=edge" http-equiv="x-ua-compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta name="google-site-verification" content="PmUkhC6SLY1aQxqNeaP40hf0j4IdHeBw-6J_XTqzA1M" />
+
+    <link rel="icon" href="/favicon.ico">
+    <link href="/assets/css/style.css" rel="stylesheet">
+
+    
+
+<!-- Basic Meta Tags -->
+<title>Data Engineering Trends 2025: The Evolution of Data Engineering | data guide</title>
+<meta name="description" content="Explore the top data engineering trends of 2025 and how the field has evolved from traditional ETL to real-time, AI-powered, cloud-native pipelines. Learn what modern data teams must know.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://data-guide.github.io/data-engineering-trends/">
+<meta name="author" content="Hardy Fenam">
+
+
+
+<!-- Open Graph Tags -->
+<meta property="og:type" content="article">
+<meta property="og:title" content="Data Engineering Trends 2025: The Evolution of Data Engineering">
+<meta property="og:description" content="Explore the top data engineering trends of 2025 and how the field has evolved from traditional ETL to real-time, AI-powered, cloud-native pipelines. Learn what modern data teams must know.">
+<meta property="og:url" content="https://data-guide.github.io/data-engineering-trends/">
+<meta property="og:image" content="https://data-guide.github.ioassets/post_images/img9.avif">
+<meta property="og:site_name" content="data guide">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2025-06-29T00:00:00-07:00">
+
+<!-- Twitter Cards -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Data Engineering Trends 2025: The Evolution of Data Engineering">
+<meta name="twitter:description" content="Explore the top data engineering trends of 2025 and how the field has evolved from traditional ETL to real-time, AI-powered, cloud-native pipelines. Learn what modern data teams must know.">
+<meta name="twitter:image" content="https://data-guide.github.ioassets/post_images/img9.avif">
+<meta name="twitter:creator" content="@HFenam55511">
+<meta name="twitter:site" content="@HFenam55511">
+    <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://data-guide.github.io/"
+      }
+      
+        ,
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Data Engineering",
+          "item": "https://data-guide.github.io/category/data-engineering/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Data Engineering Trends 2025: The Evolution of Data Engineering",
+          "item": "https://data-guide.github.io/data-engineering-trends/"
+        }
+        
+      
+    ]
+  }
+  </script>
+    
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Data Engineering Trends 2025: The Evolution of Data Engineering",
+  "description": "Explore the top data engineering trends of 2025 and how the field has evolved from traditional ETL to real-time, AI-powered, cloud-native pipelines. Learn what modern data teams must know.",
+  "author": {
+    "@type": "Person",
+    "name": "Hardy Fenam"
+  },
+  "datePublished": "2025-06-29T00:00:00-07:00",
+  "dateModified": "2025-06-29T00:00:00-07:00",
+  "image": "https://data-guide.github.ioassets/post_images/img9.avif",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://data-guide.github.io/data-engineering-trends/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "data guide",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://data-guide.github.io/assets/images/logo/logo_red.png"
+    }
+  },
+  "url": "https://data-guide.github.io/data-engineering-trends/"
+}
+</script>
+
+    
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-88BS0VNE3L"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-88BS0VNE3L');
+</script>
+  </head>
+<body class="page  min-h-screen flex flex-col">
+  <div id="menu-container"
+  class=" bg-blue-600 h-screen w-screen fixed z-50 p-8 flex-col items-center justify-around bg-gradient-to-b from-orange-600 to-yellow-300 opacity-90 overflow-hidden hidden">
+  <div id="menu-close" class="top-7 right-7 absolute">
+    <svg aria-hidden="true" focusable="false" class="h-6 text-white" role="img" xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 352 512">
+      <path fill="currentColor"
+        d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z">
+      </path>
+    </svg>
+  </div>
+  <div class="flex flex-col text-center text-white text-2xl font-bold">
+    
+    <a class="py-2" href="/">Home</a>
+    
+    <a class="py-2" href="/blog/">Blog</a>
+    
+    <a class="py-2" href="/about/">About</a>
+    
+  </div>
+</div>
+  <header class="flex items-center justify-between py-0 px-6 shadow-md top-0 w-full sticky bg-white z-50">
+
+  <div class="logo hidden md:block" role="banner">
+  <a class="flex items-start hover:opacity-70 transition duration-300 ease-in-out space-x-4" href="/" aria-label="data guide homepage">
+    
+    <img 
+      class="mr-2"
+      src="/assets/images/logo/logo_red.png"
+      alt="data guide logo"
+      height="48px"
+      width="48px"
+      loading="lazy"
+    />
+    
+    <div class="flex flex-col leading-tight">
+      
+        <span class="text-2xl font-sans font-semibold"><strong>Data Guide</strong></span>
+      
+      <span class="text-sm text-gray-500 font-sans">data-guide.github.io</span>
+    </div>
+  </a>
+</div>
+
+<div class="logo-mobile block md:hidden" role="banner">
+  <a class="flex items-center hover:opacity-70 transition duration-300 ease-in-out" href="/" aria-label="data guide homepage">
+    
+    <img 
+      src="/assets/images/logo/logo_red.png"
+      alt="data guide mobile logo"
+      height="36px"
+      width="36px"
+      loading="lazy"
+    />
+    
+    
+    <span class="ml-2 text-lg font-sans font-semibold"></span>
+    
+  </a>
+</div>
+  <div class="flex" id="menu-trigger">
+    <svg aria-hidden="true" class="text-black" data-icon="bars" data-prefix="fas" focusable="false" height="24"
+      role="img" viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z"
+        fill="currentColor"></path>
+    </svg>
+
+  </div>
+</header>
+
+    <main class="mx-auto px-6 md:px-4 flex-grow" role="main">
+      <article>
+        
+
+
+
+
+<section class="pt-16 pb-8 md:pb-14 lg:pb-10 text-center" id="top">
+  <div class="max-w-3xl mx-auto px-6 md:px-0">
+
+    <h1 class="text-2xl md:text-3xl lg:text-4xl font-extrabold tracking-tight leading-tight">
+      Data Engineering Trends 2025: The Evolution of Data Engineering
+    </h1>
+
+    
+      <p class="mt-4 text-lg md:text-xl text-gray-600 leading-relaxed max-w-2xl mx-auto">
+        Explore the top data engineering trends of 2025 and how the field has evolved from traditional ETL to real-time, AI-powered, cloud-native pipelines. Learn what modern data teams must know.
+      </p>
+    
+
+  </div>
+</section>
+
+
+  <div class="flex flex-col pb-3 md:hidden">
+    
+  </div>
+
+
+<div class="relative w-full aspect-[5/2] overflow-hidden rounded-lg">
+  <img
+    src="/assets/post_images/img9.avif"
+    alt="Visualization of data engineering trends evolving through time"
+    loading="lazy"
+    class="absolute top-0 left-0 w-full h-full object-cover object-center rounded-lg px-24 pb-5"
+  >
+</div>
+
+
+<nav class="text-sm text-gray-500 mb-4" aria-label="Breadcrumb">
+  <ol class="flex flex-wrap items-center space-x-1">
+    <!-- Home -->
+    <li>
+      <a href="/" class="hover:underline text-gray-600">Home</a>
+    </li>
+
+    
+      <!-- › Category -->
+      <li><span class="mx-1 text-gray-400">›</span></li>
+      <li>
+        <a href="/category/data-engineering/" class="hover:underline text-gray-600">
+          Data Engineering
+        </a>
+      </li>
+
+      <!-- › Post Title -->
+      <li><span class="mx-1 text-gray-400">›</span></li>
+      <li class="text-gray-800 font-medium">Data Engineering Trends 2025: The Evolution of Data Engineering</li>
+
+    
+  </ol>
+</nav>
+
+<div class="flex flex-col md:flex-row py-6 md:py-12 justify-between">
+  <div class="w-full md:w-3/12 pr-3">
+    <p class="text-sm text-gray-500">Last updated: June 29, 2025</p>
+    
+
+    
+      <div class="hidden md:block">
+        <h3 class="text-sm font-medium mb-1">Categories</h3>
+        
+          <a class="p-1 px-3 mr-1 mb-1 inline-block text-xs font-mono rounded bg-blue-200 text-blue-800 hover:bg-green-200 hover:text-blue-800 transition duration-300 ease-in-out" href="/category/data-engineering">Data Engineering</a>
+        
+          <a class="p-1 px-3 mr-1 mb-1 inline-block text-xs font-mono rounded bg-blue-200 text-blue-800 hover:bg-green-200 hover:text-blue-800 transition duration-300 ease-in-out" href="/category/tech-strategy">Tech Strategy</a>
+        
+      </div>
+    
+  </div>
+
+  <section class="">
+    <div class="prose">
+      <h2 id="introduction-why-2025-is-a-pivotal-year-for-data-engineering">Introduction: Why 2025 Is a Pivotal Year for Data Engineering</h2>
+
+<p>The field of data engineering is undergoing a seismic shift in 2025. With real-time analytics becoming essential, AI automations integrating into everyday workflows, and cloud-native architectures dominating infrastructure design, the landscape is more dynamic than ever. Businesses today aren’t just capturing data, they’re expected to act on it instantly. At the same time, AI demands cleaner, more contextual, and better-governed data than traditional systems were built to deliver.</p>
+
+<p>This means that today’s data engineers must master a broader and more sophisticated toolkit than ever before. From orchestration tools that adapt to AI-driven decisions, to serverless pipelines that scale on demand, 2025 has redefined what “modern data engineering” means.</p>
+
+<h2 id="historical-timeline-evolution-of-data-engineering">Historical Timeline: Evolution of Data Engineering</h2>
+
+<p><strong>1970s–1990s: The Relational Database &amp; ETL Origins</strong></p>
+
+<ul>
+  <li>Data engineering began in the era of relational databases like Oracle, IBM DB2, and Microsoft SQL Server.</li>
+  <li>ETL (Extract, Transform, Load) pipelines were often hand-coded in scripting languages.</li>
+  <li>Most data movement occurred in batch mode with daily or weekly cycles.</li>
+  <li>The goal: consolidate data from different sources into centralized warehouses for reporting.</li>
+</ul>
+
+<p><strong>2000s: The Big Data &amp; Hadoop Revolution</strong></p>
+
+<ul>
+  <li>Data volumes exploded thanks to web applications, mobile phones, and social media.</li>
+  <li>Hadoop introduced distributed storage (HDFS) and distributed compute (MapReduce).</li>
+  <li>Data lakes were born, raw data was stored cheaply and processed later.</li>
+  <li>New challenges arose: managing unstructured data, scaling compute, and orchestrating workflows.</li>
+</ul>
+
+<p><strong>2010s: Spark, Streaming, and the Cloud Shift</strong></p>
+
+<ul>
+  <li>Apache Spark emerged, offering faster, in-memory alternatives to MapReduce.</li>
+  <li>Kafka gained traction as a real-time streaming platform.</li>
+  <li>Cloud platforms (AWS, Azure, GCP) began to replace on-prem clusters.</li>
+  <li>Tools like Apache Airflow and dbt (data build tool) emerged for orchestration and transformation.</li>
+</ul>
+
+<p><strong>2020s: Lakehouses, ML Integration, and Data Governance</strong></p>
+
+<ul>
+  <li>Lakehouse architecture blurred the lines between lakes and warehouses.</li>
+  <li>Tools like Databricks, Delta Lake, Iceberg, and Hudi enabled ACID transactions on lake storage.</li>
+  <li>AI/ML pipelines became core use cases, requiring data versioning, lineage, and quality assurance.</li>
+  <li>Data mesh and federated governance gained popularity in large, decentralized teams.</li>
+</ul>
+
+<h2 id="key-data-engineering-trends-in-2025">Key Data Engineering Trends in 2025</h2>
+
+<ol>
+  <li>
+    <p><strong>Cloud-Native and Serverless Pipelines Become the Norm</strong></p>
+
+    <ul>
+      <li>Serverless frameworks like AWS Glue, GCP Dataflow, and Azure Synapse Analytics offer massive scalability with minimal DevOps overhead.</li>
+      <li>Infrastructure as code (IaC) tools like Terraform are used to define and manage data stacks.</li>
+      <li>Fully managed orchestration (e.g., AWS Step Functions, Google Workflows) is displacing traditional self-hosted Airflow deployments.</li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>ELT Dominates with dbt, Airflow, and Modern Warehouses</strong></p>
+
+    <ul>
+      <li>ELT (Extract, Load, Transform) replaces ETL in many stacks: raw data is loaded first, then transformed within warehouses (Snowflake, BigQuery).</li>
+      <li>dbt enables SQL-first transformations, version control, testing, and documentation.</li>
+      <li>Airflow remains a standard for complex dependency orchestration.</li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>Real-Time Streaming with Kafka, Flink, and Spark Streaming</strong></p>
+
+    <ul>
+      <li>Apache Kafka continues to be the backbone of real-time event streaming.</li>
+      <li>Apache Flink gains traction due to native stateful stream processing and exactly-once guarantees.</li>
+      <li>Spark Structured Streaming serves use cases requiring batch + stream processing in one engine.</li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>AI-Powered Orchestration and Data Quality</strong></p>
+
+    <ul>
+      <li>Tools now use AI to predict pipeline failures and recommend retries or reroutes.</li>
+      <li>Generative AI writes transformation scripts, unit tests, and documentation.</li>
+      <li>Data observability platforms (e.g., Monte Carlo, Databand) ensure freshness, volume, and schema integrity.</li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>Lakehouse vs Data Mesh vs Graph Architectures</strong></p>
+
+    <ul>
+      <li>Lakehouse architecture remains strong for unifying analytics and ML workloads.</li>
+      <li>Data mesh decentralizes ownership, aligning data products with business domains.</li>
+      <li>Graph databases (e.g., Neo4j) and knowledge graphs are increasingly used for relationship-heavy data like recommendations, fraud detection, and entity resolution.</li>
+    </ul>
+  </li>
+</ol>
+
+<h2 id="drivers-of-change-in-data-engineering">Drivers of Change in Data Engineering</h2>
+
+<ol>
+  <li><strong>Cost Efficiency</strong>: Cloud-native tools optimize resources dynamically, reducing idle compute costs.</li>
+  <li><strong>Data Volume</strong>: Explosion in semi-structured (JSON, Parquet) and unstructured data.</li>
+  <li><strong>Latency Requirements</strong>: Real-time personalization and fraud detection demand sub-second processing.</li>
+  <li><strong>Compliance &amp; Governance</strong>: GDPR, CCPA, and AI ethics require lineage, access control, and auditability.</li>
+  <li><strong>AI Demands</strong>: ML and generative models require clean, well-documented, highly contextual data.</li>
+</ol>
+
+<h2 id="future-outlook">Future Outlook (2026–2028): What’s Next?</h2>
+
+<ul>
+  <li><strong>AI-Integrated Pipelines Become the Norm</strong>: Data pipelines will increasingly include components for model inference (e.g., embedding generation, classification), not just batch ETL. Engineers will need to understand basic ML operations.</li>
+  <li><strong>Synthetic Data as a Standard Tool</strong>: Especially in regulated industries or where labeled data is scarce, teams will rely on tools like Gretel or Amazon SageMaker Ground Truth to generate training/test datasets.</li>
+  <li><strong>Operationalizing Vector Databases</strong>: Vector databases (e.g., Pinecone, Weaviate, Chroma) will shift from AI research to production environments for retrieval-augmented generation (RAG) pipelines, personalization, and recommendation systems.</li>
+  <li><strong>Upskilling + Role Convergence</strong>: The line between data engineers, ML engineers, and analytics engineers will blur. Expect an increase in company-wide upskilling programs and internal platform teams offering “paved paths” for self-serve pipelines.</li>
+  <li><strong>Low-Code Adoption with Guardrails</strong>: Tools like Apache NiFi, AWS Glue Studio, or Microsoft Fabric will enable business users to build pipelines, but with IT/governance-enforced templates and approval flows.</li>
+</ul>
+
+<hr />
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>Data engineering in 2025 is no longer a support function, it’s a strategic enabler of real-time, intelligent, and compliant data products. By understanding its historical evolution and embracing modern trends, data teams can architect systems that are not just scalable, but also future-proof. Whether you’re just entering the field or rethinking your platform, now is the time to evolve with it.</p>
+
+<hr />
+
+<h2 id="related-articles">Related Articles</h2>
+
+<ul>
+  <li><a href="/scalable-data-engineering-pipelines/">How to Design Scalable Data Engineering Pipelines in 2025</a></li>
+</ul>
+
+      
+<section class="mt-10" aria-labelledby="faq-heading">
+  <h2 id="faq" class="text-2xl font-semibold mb-4">Frequently Asked Questions</h2>
+  <dl class="space-y-6">
+    
+    <div>
+      <dt class="font-medium text-gray-800">Q: What are the top data engineering trends in 2025?</dt>
+      <dd class="text-gray-700">A: Top trends include serverless data pipelines, ELT with dbt and modern warehouses, real-time streaming with Kafka and Flink, AI-powered orchestration, and architectural shifts toward lakehouses and data mesh.</dd>
+    </div>
+    
+    <div>
+      <dt class="font-medium text-gray-800">Q: How has data engineering evolved over the years?</dt>
+      <dd class="text-gray-700">A: Data engineering evolved from early ETL with relational databases in the 1970s, to Hadoop and Big Data in the 2000s, Spark and cloud tools in the 2010s, and now to real-time, AI-integrated, cloud-native platforms in the 2020s.</dd>
+    </div>
+    
+    <div>
+      <dt class="font-medium text-gray-800">Q: Why is real-time data processing important in 2025?</dt>
+      <dd class="text-gray-700">A: Real-time data pipelines enable instant analytics, fraud detection, and personalization. In 2025, latency-sensitive AI models and business logic depend on streaming architectures to stay competitive.</dd>
+    </div>
+    
+  </dl>
+</section>
+
+    </div>
+    
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    
+    {
+      "@type": "Question",
+      "name": "What are the top data engineering trends in 2025?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Top trends include serverless data pipelines, ELT with dbt and modern warehouses, real-time streaming with Kafka and Flink, AI-powered orchestration, and architectural shifts toward lakehouses and data mesh."
+      }
+    },
+    
+    {
+      "@type": "Question",
+      "name": "How has data engineering evolved over the years?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Data engineering evolved from early ETL with relational databases in the 1970s, to Hadoop and Big Data in the 2000s, Spark and cloud tools in the 2010s, and now to real-time, AI-integrated, cloud-native platforms in the 2020s."
+      }
+    },
+    
+    {
+      "@type": "Question",
+      "name": "Why is real-time data processing important in 2025?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Real-time data pipelines enable instant analytics, fraud detection, and personalization. In 2025, latency-sensitive AI models and business logic depend on streaming architectures to stay competitive."
+      }
+    }
+    
+  ]
+}
+</script>
+
+  </section>
+      <!-- Sticky Sidebar TOC -->
+    
+    <aside class="hidden md:block md:w-1/4 md:pl-4">
+      <nav class="sticky top-24 bg-white border rounded-xl p-4 shadow-sm text-sm">
+        <h2 class="text-lg font-semibold mb-3">Table of Contents</h2>
+        <ul class="space-y-2">
+          
+            <li>
+              <a href="#introduction-why-2025-is-a-pivotal-year-for-data-engineering" class="text-blue-600 hover:underline">
+                Introduction: Why 2025 Is a Pivotal Year
+              </a>
+            </li>
+          
+            <li>
+              <a href="#historical-timeline-evolution-of-data-engineering" class="text-blue-600 hover:underline">
+                Historical Timeline: Evolution of Data Engineering
+              </a>
+            </li>
+          
+            <li>
+              <a href="#key-data-engineering-trends-in-2025" class="text-blue-600 hover:underline">
+                Key 2025 Trends in Data Engineering
+              </a>
+            </li>
+          
+            <li>
+              <a href="#drivers-of-change-in-data-engineering" class="text-blue-600 hover:underline">
+                Drivers of Change
+              </a>
+            </li>
+          
+            <li>
+              <a href="#future-outlook" class="text-blue-600 hover:underline">
+                Future Outlook (2026–2028)
+              </a>
+            </li>
+          
+            <li>
+              <a href="#conclusion" class="text-blue-600 hover:underline">
+                Conclusion
+              </a>
+            </li>
+          
+            <li>
+              <a href="#related-articles" class="text-blue-600 hover:underline">
+                Related Articles
+              </a>
+            </li>
+          
+            <li>
+              <a href="#faq" class="text-blue-600 hover:underline">
+                FAQs
+              </a>
+            </li>
+          
+        </ul>
+      </nav>
+    </aside>
+    
+</div>
+
+
+  <div class="py-6 mt-6 border-t-2 block md:hidden">
+    <h3 class="text-sm font-medium mb-1">Categories</h3>
+    <div>
+      
+        <a class="p-1 px-3 mr-1 mb-1 inline-block text-xs font-mono rounded bg-blue-200 text-blue-800 hover:bg-green-200 hover:text-blue-800 transition duration-300 ease-in-out" href="/category/data-engineering">Data Engineering</a>
+      
+        <a class="p-1 px-3 mr-1 mb-1 inline-block text-xs font-mono rounded bg-blue-200 text-blue-800 hover:bg-green-200 hover:text-blue-800 transition duration-300 ease-in-out" href="/category/tech-strategy">Tech Strategy</a>
+      
+    </div>
+  </div>
+
+
+<section class="mt-12 bg-blue-50 border border-blue-100 rounded-xl p-6 py-10 text-center shadow-sm">
+  <h2 class="text-xl md:text-2xl font-semibold text-blue-800 mb-3">
+    Want to keep learning?
+  </h2>
+  <p class="text-gray-700 mb-6 max-w-2xl mx-auto">
+    Explore more tutorials, tools, and beginner guides across categories designed to help you grow your skills in real-world tech.
+  </p>
+  <a href="/categories/"
+     class="inline-block bg-blue-600 text-white font-semibold px-6 py-3 rounded-lg shadow-md hover:bg-blue-700 transition">
+    Browse All Categories →
+  </a>
+</section>
+      </article>
+    </main>
+
+  <footer class="w-full bg-gray-900 text-gray-300 py-10 px-6 mt-12">
+  <!-- Cookie Notice -->
+<div id="cookie-banner" class="fixed bottom-0 inset-x-0 bg-gray-900 text-white text-sm p-4 z-50 hidden">
+  <div class="max-w-4xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-4">
+    <p class="text-center sm:text-left">
+      We use cookies to improve your experience. By continuing to use this site, you agree to our 
+      <a href="/privacy-policy/" class="underline">Privacy Policy</a>.
+    </p>
+    <button id="cookie-accept" class="bg-white text-gray-900 px-4 py-1 rounded hover:bg-gray-200 transition text-sm">
+      Accept
+    </button>
+  </div>
+</div>
+
+<script>
+  // Show banner if consent not given
+  if (!localStorage.getItem('cookieAccepted')) {
+    document.getElementById('cookie-banner').classList.remove('hidden');
+  }
+
+  // Accept button
+  document.getElementById('cookie-accept')?.addEventListener('click', function () {
+    localStorage.setItem('cookieAccepted', 'true');
+    document.getElementById('cookie-banner').classList.add('hidden');
+  });
+</script>
+
+  <div class="max-w-4xl mx-auto space-y-6 text-sm">
+
+    <!-- Navigation -->
+    <nav class="flex flex-wrap justify-center gap-4 text-gray-400">
+      <a href="/" class="hover:text-white transition">Home</a>
+      <a href="/about/" class="hover:text-white transition">About</a>
+      <a href="/blog/" class="hover:text-white transition">Blog</a>
+      <a href="/contact/" class="hover:text-white transition">Contact</a>
+      <a href="/privacy-policy/" class="hover:text-white transition">Privacy</a>
+      <a href="/disclaimer/" class="hover:text-white transition">Disclaimer</a>
+    </nav>
+
+    <!-- Site Description -->
+    <p class="text-center text-gray-400">
+      Built by <span class="text-white font-semibold">Hardy Fenam</span> — sharing practical tech tips, study guides, and online course reviews for aspiring developers.
+    </p>
+
+    <!-- Legal / Affiliate Disclosure -->
+    <p class="text-center text-gray-500 text-xs">
+      © 2025 Hardy Fenam. This site may contain affiliate links. 
+      <a href="/disclaimer/" class="underline hover:text-white transition">Learn more</a>.
+    </p>
+
+    <!-- Social Links -->
+    <div class="flex justify-center space-x-4 text-gray-400">
+      <a href="https://github.com/hhrh" target="_blank" rel="noopener" class="hover:text-white transition">GitHub</a>
+      <a href="https://linkedin.com/in/hardyf" target="_blank" rel="noopener" class="hover:text-white transition">LinkedIn</a>
+    </div>
+
+  </div>
+</footer>
+  <script type="text/javascript" src="/assets/js/hamburger.js" defer></script>
+</body>
+</html>
